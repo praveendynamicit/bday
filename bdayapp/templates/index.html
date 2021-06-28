@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <title>Birth Day Greeting Card</title>
+    <meta http-equiv="X-Frame-Options" content="deny">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="  {% static 'css/style.css' %} ">
+    <link rel="icon" type="image/icon" href=" {% static 'images/icon.png' %} ">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	<script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    
+    {% for i in data %}
+            <div id="bg_bday" class="container-fluid mt-2 p-5">
+                <div class="row box-shadow" id='bg-trans'>
+                    <div class="col">
+                        <img src="../static/images/{{i.6}}" class="img-thumbnail" alt="">
+                    </div>
+                    <div class="col-sm mt-md-5">
+                        {% if i.7 == 'Today' %}
+                            <h1 class="text-white display-8">Many more Happy Returns of the Day!!!!!! </h1>
+                        {% endif %}
+                        <h2 class="fw-300 text-white">{{i.7}}</h2>
+                        <h1 class="display-4 text-white">{{i.2}}</h1>
+                        <h2 class="fw-300 text-white"> {{i.3}} </h2>
+                    </div>
+                </div>
+            </div>
+    {% endfor %}
+    <br>
+</body>
+</html>
